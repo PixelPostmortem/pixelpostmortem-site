@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pixel Postmortem Publisher</title>
+<meta name="description" content="Pixel Postmortem Publisher is the publishing tool behind the Pixel Postmortem video-game history channel.">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <img src="icon.png" alt="Pixel Postmortem logo">
+  <a class="brand" href="./">Pixel Postmortem Publisher</a>
+  <nav><a href="./">Home</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+</header>
+<main>
+  <h1>The publishing tool of the Pixel Postmortem channel</h1>
+  <p class="lead">Pixel Postmortem is a short-form video channel about video-game history: failed consoles,
+  cancelled games and the stories behind them. Pixel Postmortem Publisher is the tool its operator uses to
+  render those videos and publish them to the channel's own accounts through official platform APIs.</p>
+
+  <h2>What the app does</h2>
+  <div class="card">
+    <ol>
+      <li><strong>Produce</strong> &mdash; a fact-checked script is turned into a vertical 1080&times;1920 video
+      (narration, subtitles, archive images) on the operator's own server.</li>
+      <li><strong>Review</strong> &mdash; the operator watches the rendered master and approves it.</li>
+      <li><strong>Publish</strong> &mdash; the operator publishes the approved video to the channel's accounts
+      (TikTok, YouTube) using the platforms' official APIs.</li>
+    </ol>
+  </div>
+
+  <h2>TikTok integration</h2>
+  <p>The app uses <strong>Login Kit</strong> and the <strong>Content Posting API</strong> with the
+  <code>user.info.basic</code>, <code>video.upload</code> and <code>video.publish</code> scopes, only for the
+  channel's own TikTok account (@pixelpostmortem):</p>
+  <ul>
+    <li>The account owner signs in with TikTok and authorizes the app (OAuth 2.0 with PKCE).</li>
+    <li>Before each post, the app queries the latest creator info and shows a confirmation screen with the
+    creator's nickname, the caption, the AI-generated content label, a privacy level chosen manually among
+    the options returned by TikTok (no default), the comment / duet / stitch settings (off by default), the
+    commercial content disclosure and the Music Usage Confirmation consent.</li>
+    <li>Nothing is uploaded until the operator explicitly confirms. Videos can also be sent to the TikTok
+    inbox as drafts, to be finished and posted from the TikTok app.</li>
+    <li>Videos are labeled as AI-generated content when synthetic narration or images are used.</li>
+  </ul>
+
+  <h2>Who can use it</h2>
+  <p>Pixel Postmortem Publisher is operated by the Pixel Postmortem team for the Pixel Postmortem channel.
+  It is not offered to the public, has no sign-up, and does not access any other TikTok user's data.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this app: contact us via the Pixel Postmortem channel on
+  <a href="https://www.tiktok.com/@pixelpostmortem">TikTok</a> or
+  <a href="https://www.youtube.com/@pixelpostmortemhq">YouTube</a>.</p>
+</main>
+<footer>
+  <a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a>
+  <span>&copy; 2026 Pixel Postmortem</span>
+</footer>
+</body>
+</html>
